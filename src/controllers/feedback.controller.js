@@ -1,11 +1,11 @@
-const validate = require("../schemas/ask.schema");
+const validate = require("../schemas/feedback.schema");
 const joiErrorHandler = require("../utils/joi-errors-handler");
 // Ask service
-const AskService = require("../services/ask.service");
+const FeedbackService = require("../services/feedback.service");
 const create = async (req, res, next) => {
-  const { ask_data } = req.body;
+  const { feedback_data } = req.body;
   // Payload controller
-  const { error } = validate(ask_data);
+  const { error } = validate(feedback_data);
   if (error) {
     res.status(400).json({
       errors: joiErrorHandler(error.details),
@@ -13,7 +13,7 @@ const create = async (req, res, next) => {
     return;
   }
   // Is Valid
-  const service = new AskService(ask_data);
+  const service = new FeedbackService(feedback_data);
   const isSend = await service.sendMail();
   if (isSend.messageId) {
     res.status(201).json({
