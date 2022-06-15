@@ -1,5 +1,11 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
+// Express bod json configured
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
 // Configs
 const { port } = require("./configs/env.config");
 // Routes

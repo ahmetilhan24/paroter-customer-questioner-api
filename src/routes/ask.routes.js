@@ -1,9 +1,5 @@
-const askRoute = require("express").Router();
+const askRouter = require("express").Router();
+const { create } = require("../controllers/ask.controller");
+askRouter.post("/", create);
 
-askRoute.get("/", (req, res, next) => {
-  res.status(200).json({
-    message: "Ask dizine route geldi",
-  });
-});
-
-module.exports.askRouter = askRoute;
+module.exports = askRouter;

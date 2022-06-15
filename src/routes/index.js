@@ -9,6 +9,6 @@ routes.get("/", (req, res, next) => {
 });
 
 // Router
-routes.route("/ask", askRouter);
+routes.use("/ask", askRouter);
 
 module.exports = routes;
