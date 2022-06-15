@@ -6,7 +6,7 @@
     "author": "Ahmet ilhan <ahmetilhan.dev@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "dev": "set NODE_ENV=development && nodemon src/app.js"
+        "dev": "NODE_ENV=development && nodemon src/app.js"
     },
     "dependencies": {
         "dotenv": "^16.0.1",

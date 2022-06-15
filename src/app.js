@@ -1,11 +1,9 @@
 const express = require("express");
 const app = express();
-// Env config
-require("dotenv").config();
+// Configs
+const { port } = require("./configs/env.config");
 // Routes
 const routes = require("./routes");
 app.use("/", routes);
 // Start server
-app.listen(process.env.PORT || 3000, () =>
-  console.log(`${process.env.PORT}'unu dinliyorum!`)
-);
+app.listen(port, () => console.log(`${port} portunu dinliyorum!`));
