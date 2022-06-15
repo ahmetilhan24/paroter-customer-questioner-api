@@ -8,6 +8,6 @@ const schema = Joi.object()
     message: Joi.string().max(200).min(20).required(),
   });
 
-const validate = (payload) => schema.validate(payload);
+const validate = async (payload) => schema.validate(payload);
 
 module.exports = validate;
