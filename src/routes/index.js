@@ -1,6 +1,6 @@
 const routes = require("express").Router();
 // Import routes
-const askRouter = require("./ask.routes");
+const askRoutes = require("./ask.routes");
 
 routes.get("/", (req, res, next) => {
   res.status(200).json({
@@ -9,6 +9,6 @@ routes.get("/", (req, res, next) => {
 });
 
 // Router
-routes.use("/ask", askRouter);
+routes.use("/ask", askRoutes);
 
 module.exports = routes;

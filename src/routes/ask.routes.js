@@ -1,5 +1,5 @@
-const askRouter = require("express").Router();
+const askRoutes = require("express").Router();
 const { create } = require("../controllers/ask.controller");
-askRouter.post("/", create);
+askRoutes.post("/", create);
 
-module.exports = askRouter;
+module.exports = askRoutes;
